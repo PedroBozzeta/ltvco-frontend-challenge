@@ -5,7 +5,7 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "3001:3001"  # Map the port
+      - "5173:5173"  # Map the port
     volumes:
       - .:/app  
     environment:
