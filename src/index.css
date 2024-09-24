@@ -16,7 +16,7 @@ html, body {
 }
 
 main {
-  margin-top: 60px; /* Eliminar margen superior */
+  margin-top: 100px; /* Eliminar margen superior */
   flex-grow: 1; /* Ocupa todo el espacio disponible */
   max-width: 100%;
   flex-grow: 1; /* Ocupa todo el espacio disponible entre el Navbar y el Footer */
