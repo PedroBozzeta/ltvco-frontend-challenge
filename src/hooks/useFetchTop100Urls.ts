@@ -9,21 +9,20 @@ export interface ShortUlrResponse {
 }
 export function useFetchTop100Urls() {
     const [data, setData] = useState<ShortUlrResponse[] | null>(null)
-    const [loading, setLoading] = useState<boolean>(false)
+    const [loading, setLoading] = useState<boolean>(true)
 
     const abortControllerRef = useRef<AbortController | null>(null);
 
     useEffect(() => {
 
-        setLoading(true)
         
         abortControllerRef.current?.abort();
         abortControllerRef.current = new AbortController()
 
         const fetchData = async () => {
             try {
-                const response = await fetch('http://localhost:3000/',
-                    { signal: abortControllerRef?.current?.signal }
+                const response = await fetch(`${process.env.REACT_APP_API_URL}`,
+                    { signal: abortControllerRef?.current?.signal },
                 );
                 if (response.ok) {
                     const parsedData = await response.json()

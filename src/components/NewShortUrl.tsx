@@ -7,26 +7,25 @@ import ShortUrlCreated from "./ShortUrlCreated";
 import styled from "styled-components";
 
 // Styled-components
-const FormContainer = styled.div`
+const FormContainer = styled.form`
   background: linear-gradient(
     90deg,
     rgba(244, 225, 231, 1) 7%,
     rgba(208, 189, 192, 1) 49%
   );
   border-radius: 10px;
-  padding: 20px 0;
-  margin-bottom: 20px;
+  padding: 2rem;
+  text-align: center;
 `;
 
 const FormButton = styled.button`
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1 rem;
 `;
 
-const ErrorMessage = styled.h5`
+const ErrorMessage = styled.span`
   color: red;
-  margin-top: 1rem;
   text-align: center;
 `;
 
@@ -50,8 +49,8 @@ const NewShortUrl = () => {
           Shorten your links quickly and easily with LTVCo Shortener.
         </LTVCoDescription>
 
-        <form onSubmit={handleSubmit}>
-          <FormContainer className="row d-flex justify-content-center align-items-center">
+        <FormContainer onSubmit={handleSubmit}>
+          <div className="d-flex justify-content-center align-items-center gap-3">
             <div className="col-auto align-center">
               <label htmlFor="url" className="form-label fw-bold">
                 URL:
@@ -77,18 +76,15 @@ const NewShortUrl = () => {
                 disabled={loading}
               >
                 Submit
-                {loading && <Spinner size="small" color="dark" />}
+                {loading && <Spinner size="small" color="light" />}
               </FormButton>
             </div>
-
-            {error && <ErrorMessage>{error}</ErrorMessage>}
-          </FormContainer>
-              </form>
-              
-
-      {response && <ShortUrlCreated response={response} />}
           </div>
-          
+          {error && <ErrorMessage>{error}</ErrorMessage>}
+        </FormContainer>
+
+        {response && <ShortUrlCreated response={response} />}
+      </div>
     </>
   );
 };

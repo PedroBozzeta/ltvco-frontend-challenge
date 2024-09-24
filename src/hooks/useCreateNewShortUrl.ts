@@ -28,7 +28,7 @@ export function useCreateNewShortUrl() {
         abortControllerRef.current = new AbortController();
 
         try {
-            const response = await fetch(`${process.env.REACT_APP_API_URL}short_urls`,
+            const response = await fetch(`/short_urls`,
                 {
                     method: 'POST',
                     headers: {

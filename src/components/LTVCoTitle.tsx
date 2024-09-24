@@ -4,7 +4,7 @@ import { styled } from 'styled-components';
 
 export const StyledLTVCoTitle = styled.h1`
   font-size: 50px;
-  margin-left: 10%;
+  width:100%;
   font-weight: 900;
 `;
 

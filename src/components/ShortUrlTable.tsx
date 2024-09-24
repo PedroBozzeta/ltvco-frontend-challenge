@@ -7,15 +7,21 @@ interface TableProps {
 }
 
 const StyledShortUrlTable = styled.div`
-  max-width: 1500px; /* Máximo ancho */
-  width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
-  margin: 0 auto; /* Centra el contenedor */
-  padding: 10px; /* Espaciado interno */
+  max-width: 1500px; 
+  width: 100%; 
+  margin: 0 auto; 
+  padding: 10px; 
   overflow-x: scroll;
+  
+  @media (max-width: 1500px) {
+    .visible{
+        display:none;
+    }
+  }
 `;
 
 const StyledTable = styled.table`
-  border-collapse: collapse; /* Elimina espacios entre celdas */
+  border-collapse: collapse; 
 `;
 
 const ShortUrlTable = (tableProps: TableProps) => {
@@ -26,9 +32,10 @@ const ShortUrlTable = (tableProps: TableProps) => {
         <thead className="table-dark text-center">
           <tr>
             <th scope="col">Top</th>
-            <th scope="col">Title</th>
+            <th scope="col" className="visible">Title</th>
             <th scope="col">Visits</th>
-            <th scope="col">Original Url</th>
+            <th scope="col" className="visible">Original Url</th>
+            
             <th scope="col">ShortUrl</th>
           </tr>
         </thead>

@@ -8,15 +8,15 @@ const Top100ShortUrls = () => {
   const { data, loading } = useFetchTop100Urls();
 
   return (
-    <div>
-      <LTVCoTitle>Top 100</LTVCoTitle>
+    <div className="container">
+      <LTVCoTitle>TOP 100</LTVCoTitle>
 
       <LTVCoDescription>
-        List of the first 100 most visites urls.
+        List of the 100 most visited urls.
       </LTVCoDescription>
 
       {loading && (
-        <div className="d-flex justify-content-center">
+        <div className="d-flex justify-content-center align-items-center ">
           <Spinner size="large" color="dark" />
         </div>
       )}

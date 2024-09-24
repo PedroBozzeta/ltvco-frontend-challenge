@@ -53,8 +53,8 @@ const Navbar = () => {
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link fw-semibold" to="/new-short-url">
-                New{" "}
+              <NavLink className="nav-link fw-semibold" to="/top-100">
+                Top 100{" "}
               </NavLink>
             </li>
           </ul>

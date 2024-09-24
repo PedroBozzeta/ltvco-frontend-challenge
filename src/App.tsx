@@ -9,14 +9,12 @@ function App() {
   return (
     <Router>
       <Navbar />
-      <div className="content-wrapper">
         <main>
           <Routes>
-            <Route path='/' element={<Top100ShortUrls />} />
-            <Route path='/new-short-url' element={ <NewShortUrl/>} />
+            <Route path='/top-100' element={<Top100ShortUrls />} />
+            <Route path='/' element={ <NewShortUrl/>} />
           </Routes>
         </main>
-      </div>
       <Footer/>
     </Router>
   )
