@@ -1,41 +1,44 @@
 import { ShortUlrResponse } from "../hooks/useFetchTop100Urls";
+import styled from "styled-components";
+import ShortUrlRow from "./ShortUrlRow";
 
 interface TableProps {
   data: ShortUlrResponse[];
 }
 
+const StyledShortUrlTable = styled.div`
+  max-width: 1500px; /* Máximo ancho */
+  width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
+  margin: 0 auto; /* Centra el contenedor */
+  padding: 10px; /* Espaciado interno */
+  overflow-x: scroll;
+`;
+
+const StyledTable = styled.table`
+  border-collapse: collapse; /* Elimina espacios entre celdas */
+`;
+
 const ShortUrlTable = (tableProps: TableProps) => {
   return (
-    <div className="table-responsive-lg d-flex justify-content-center overflow-auto shadow-lg"   style={{ maxHeight: '800px', overflow: 'scroll' }}>
-      <table className="table table-striped w-50 table-hover mh-75">
+    <StyledShortUrlTable>
+      <StyledTable className="table table-sm table-light table-hover">
         <caption>Top 100 most visited Urls</caption>
-        <thead className="table-dark">
-          <tr className="text-center row">
-            <th className="col-1">Top</th>
-            <th className="col-3">Title</th>
-            <th className="col-2">Visits</th>
-            <th className="col-3">Original Url</th>
-            <th className="col-3">ShortUrl</th>
+        <thead className="table-dark text-center">
+          <tr>
+            <th scope="col">Top</th>
+            <th scope="col">Title</th>
+            <th scope="col">Visits</th>
+            <th scope="col">Original Url</th>
+            <th scope="col">ShortUrl</th>
           </tr>
         </thead>
         <tbody>
           {tableProps.data?.map((item, index) => (
-            <tr key={item.code} className="row text-center ">
-              <td className="col-1">{index + 1}</td>
-              <td className="col-3 text-truncate text-start" >{item.title}</td>
-              <td className="col-2">{item.click_count}</td>
-              <td className="col-3 text-truncate text-start">{item.full_url}</td>
-              <td className="col-3 text-start">
-                <a
-                  href={`${process.env.REACT_APP_API_URL + item.code}`}
-                  target="_blank" rel="noreferrer"
-                >{`${process.env.REACT_APP_API_URL + item.code}`}</a>
-              </td>
-            </tr>
+            <ShortUrlRow item={item} key={item.code} index={index} />
           ))}
         </tbody>
-      </table>
-    </div>
+      </StyledTable>
+    </StyledShortUrlTable>
   );
 };
 

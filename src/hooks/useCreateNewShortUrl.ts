@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 
-interface CreateNewShortUrlResponse {
+export interface CreateNewShortUrlResponse {
     short_code: string;
 }
 

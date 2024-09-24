@@ -1,15 +1,20 @@
 import { useFetchTop100Urls } from "../hooks/useFetchTop100Urls";
 import ShortUrlTable from "./ShortUrlTable";
 import Spinner from "./Spinner";
+import LTVCoDescription from "./LTVCoDescription";
+import LTVCoTitle from "./LTVCoTitle";
 
 const Top100ShortUrls = () => {
   const { data, loading } = useFetchTop100Urls();
 
   return (
-    <div className="w-100 h-100">
-      <h3 className="montserrat-font fw-bolder fs-1 text-center">
-        Top 100 most frequently accessed URLs
-      </h3>
+    <div>
+      <LTVCoTitle>Top 100</LTVCoTitle>
+
+      <LTVCoDescription>
+        List of the first 100 most visites urls.
+      </LTVCoDescription>
+
       {loading && (
         <div className="d-flex justify-content-center">
           <Spinner size="large" color="dark" />

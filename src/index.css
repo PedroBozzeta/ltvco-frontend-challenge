@@ -1,19 +1,31 @@
-body {
+html, body {
+  height: 100vh; /* Asegura que html y body ocupen todo el alto del viewport */
   margin: 0;
-  padding-top: 80px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: "Montserrat", sans-serif, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(90deg, rgba(241, 243, 255, 1) 48%, rgba(255, 250, 250, 1) 100%);
+
 }
 
-body{
-  height: 100%;
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* El root debe ocupar todo el viewport */
 }
-.montserrat-font{
-  font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 20px;
-  font-style: normal;
+
+.content-wrapper {
+  flex-grow: 1; /* Ocupa todo el espacio disponible entre el Navbar y el Footer */
+  display: flex; /* Permite que su contenido se alinee */
+  flex-direction: column; /* Asegura que el contenido se apile verticalmente */
+}
+
+main {
+  margin-top: 60px; /* Eliminar margen superior */
+  flex-grow: 1; /* Ocupa todo el espacio disponible */
+}
+
+footer {
+  margin: 0; /* Asegura que no haya márgenes adicionales */
+  padding: 0; /* Asegura que no haya padding adicional */
 }
