@@ -7,18 +7,19 @@ To get the project up and running, follow the instructions below.
 ### Prerequisites
 Ensure you have the following installed on your machine:
 
-Node.js (version 14 or higher)
-npm (usually installed with Node.js)
-Docker (if you want to run the project in a containerized environment)
+- Node.js (version 14 or higher)
+- npm (usually installed with Node.js)
+- Docker (if you want to run the project in a containerized environment)
 
 ## Installing Dependencies
 Before running the project, install the required dependencies by navigating to the project directory and running:
 
+
 >npm install
-This will install all necessary libraries listed in package.json.
+
 
 ## Running the Project
-There are two ways to run the project: directly in development mode with npm or inside a Docker container using docker-compose.
+Currently, the project is being run locally using npm while the Docker configuration is being set up. You can start the project in development mode using either of the following methods:
 
 ### Option 1: Run Locally with npm
 To start the project in development mode:
@@ -28,12 +29,8 @@ To start the project in development mode:
 This will run the app in development mode on http://localhost:5173. The page will reload automatically if you make changes to the code. You can also check the console for lint errors.
 
 ### Option 2: Run with Docker Compose
-If you prefer to run the project in a Docker container, use docker-compose:
-
->docker-compose up
-This command builds the Docker image and starts the application inside a container. Make sure Docker is running on your machine before executing this command.
-
-With docker-compose, there’s no need to manually install dependencies or run npm install. Docker will take care of everything based on the configuration in the docker-compose.yml file.
+Option 2: Run with Docker Compose
+If you prefer to run the project in a Docker container, once the Docker setup is complete, you can use docker-compose:
 
 ### Final Note: Deprecation Warning
 
