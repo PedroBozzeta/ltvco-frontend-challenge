@@ -10,6 +10,5 @@ services:
       - .:/app  
     environment:
       - WATCHPACK_POLLING=true # For sincronizing the changes
-      -
     stdin_open: true
     tty: true
