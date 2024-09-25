@@ -26,7 +26,7 @@ To start the project in development mode:
 
 >npm start
 
-This will run the app in development mode on http://localhost:5173. The page will reload automatically if you make changes to the code. You can also check the console for lint errors.
+This will run the app in development mode on http://localhost:3001. The page will reload automatically if you make changes to the code. You can also check the console for lint errors.
 
 ### Option 2: Run with Docker Compose
 Option 2: Run with Docker Compose
