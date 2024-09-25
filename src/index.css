@@ -1,5 +1,5 @@
 html, body {
-  height: 100vh; /* Asegura que html y body ocupen todo el alto del viewport */
+  height: 100vh; 
   margin: 0;
   font-family: "Montserrat", sans-serif, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -12,19 +12,19 @@ html, body {
 #root {
   display: flex;
   flex-direction: column;
-  height: 100%; /* El root debe ocupar todo el viewport */
+  height: 100%;
 }
 
 main {
-  margin-top: 100px; /* Eliminar margen superior */
-  flex-grow: 1; /* Ocupa todo el espacio disponible */
+  margin-top: 100px; 
+  flex-grow: 1;
   max-width: 100%;
-  flex-grow: 1; /* Ocupa todo el espacio disponible entre el Navbar y el Footer */
-  display: flex; /* Permite que su contenido se alinee */
-  flex-direction: column; /* Asegura que el contenido se apile verticalmente */
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column; 
 }
 
 footer {
-  margin: 0; /* Asegura que no haya márgenes adicionales */
-  padding: 0; /* Asegura que no haya padding adicional */
+  margin: 0;
+  padding: 0; 
 }
