@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import styled from "styled-components";
 
 const StyledNavbar = styled.nav`
@@ -13,25 +13,34 @@ const StyledNavbar = styled.nav`
 `;
 
 const StyledLogo = styled.img`
-  height: 60%; /* Cambiar a un porcentaje más bajo si es necesario */
-  max-height: 50px; /* Limitar la altura máxima */
-  width: auto; /* Mantener la proporción */
-  object-fit: contain; /* O usa cover si prefieres */
+  height: 60%;
+  max-height: 50px;
+  width: auto;
+  object-fit: contain;
 `;
 
-const StyledToogledNavbar = styled.div`
+const StyledToggledNavbar = styled.div`
+  padding: 10px;
   background: linear-gradient(
     90deg,
     rgba(163, 11, 76, 1) 27%,
     rgba(169, 12, 41, 1) 100%
   );
+  width: 100%; 
 `;
+
 const Navbar = () => {
+  const location = useLocation();
+
+  const handleLinkClick = () => {
+    const navbarToggler = document.querySelector(".navbar-toggler") as HTMLButtonElement; // Cast to HTMLButtonElement
+    if (navbarToggler) {
+      navbarToggler.click(); 
+    }
+  };
+
   return (
-    <StyledNavbar
-      className="navbar navbar-expand-lg bg-dark fixed-top"
-      data-bs-theme="dark"
-    >
+    <StyledNavbar className="navbar navbar-expand-lg bg-dark fixed-top" data-bs-theme="dark">
       <div className="container-fluid">
         <StyledLogo src="./logo.png" alt="logo" />
         <button
@@ -45,20 +54,20 @@ const Navbar = () => {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        < StyledToogledNavbar className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav ms-auto">
+        <StyledToggledNavbar className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav ms-auto"> 
             <li className="nav-item">
-              <NavLink className="nav-link fw-semibold" to={"/"}>
-                Home{" "}
+              <NavLink className={`nav-link fw-semibold ${location.pathname === '/' ? 'active' : ''}`} to="/" onClick={handleLinkClick}>
+                Home
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link fw-semibold" to="/top-100">
-                Top 100{" "}
+              <NavLink className={`nav-link fw-semibold ${location.pathname === '/top-100' ? 'active' : ''}`} to="/top-100" onClick={handleLinkClick}>
+                Top 100
               </NavLink>
             </li>
           </ul>
-        </ StyledToogledNavbar>
+        </StyledToggledNavbar>
       </div>
     </StyledNavbar>
   );

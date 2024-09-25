@@ -9,7 +9,7 @@ COPY package.json ./
 COPY package-lock.json ./
 
 # Install all dependencies
-RUN npm install
+RUN npm install && npm list react-scripts
 
 # Copy the rest od the application
 COPY . .

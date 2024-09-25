@@ -5,10 +5,11 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "5173:5173"  # Map the port
+      - "3001:3001"  # Map the port
     volumes:
       - .:/app  
     environment:
       - WATCHPACK_POLLING=true # For sincronizing the changes
+      -
     stdin_open: true
     tty: true
