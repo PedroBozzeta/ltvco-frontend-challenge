@@ -30,7 +30,7 @@ This will run the app in development mode on http://localhost:5173. The page wil
 ### Option 2: Run with Docker Compose
 If you prefer to run the project in a Docker container, use docker-compose:
 
-docker-compose up
+>docker-compose up
 This command builds the Docker image and starts the application inside a container. Make sure Docker is running on your machine before executing this command.
 
 With docker-compose, there’s no need to manually install dependencies or run npm install. Docker will take care of everything based on the configuration in the docker-compose.yml file.
